@@ -21,3 +21,4 @@ t.start()
 t=Thread(target=writeMsg, args=(client_socket,))
 t.start()
 
+print('hello world')
