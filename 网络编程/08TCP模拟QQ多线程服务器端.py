@@ -13,7 +13,7 @@ def main():
         client_socket, client_Info=server_socket.accept()
         sockets.append(client_socket)
         #开启线程处理当前客户端的请求
-        t=Thread(target=readMsg, args=(client_socket))
+        t=Thread(target=readMsg, args=(client_socket,))
         t.start()
     
 
