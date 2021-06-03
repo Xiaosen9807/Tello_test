@@ -14,7 +14,7 @@ def writeMsg(client_socket):
         msg=input('>')
         client_socket.send(name.encode('utf-8')+msg.encode('utf-8'))
 
-name=input('>>')+':'
+name=input('username>>')+':'
 #开启一个线程处理客户端的读取消息
 t=Thread(target=readMsg, args=(client_socket,))
 t.start()
