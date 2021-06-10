@@ -8,7 +8,7 @@ try:
     me.connect()
     print(me.get_battery())
 
-    me.streamon()  #open stream
+    me.streamon()
     me.takeoff()
     me.send_rc_control(0, 0, 5, 0)
     time.sleep(2)
@@ -42,7 +42,7 @@ def findFace(img):
         cy = y + h // 2
         area = w * h
         cv2.circle(img, (cx, cy), 5, (0, 255, 0), cv2.FILLED)
-        cv2.line(img,(cx, cy),(180,120),(0,255,255),5)
+        cv2.line(img, (cx, cy), (180, 120), (0, 255, 255), 5)
         myfacelistC.append([cx, cy])
         myfacelistArea.append(area)
     if len(myfacelistArea) != 0:
@@ -69,10 +69,10 @@ def trackFace(me, info, w, pid, xpError):
         ud = 0
     if uddistance < udRange[0]:
         ud = -20
-    elif uddistance > udRange[1] and uddistance!=120:
+    elif uddistance > udRange[1] and uddistance != 120:
         ud = 20
-    elif uddistance ==120:
-        ud = 0    
+    elif uddistance == 120:
+        ud = 0
 
     area = info[1]
     if area > fbRange[0] and area < fbRange[1]:
